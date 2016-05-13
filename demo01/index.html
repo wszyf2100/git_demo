@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="..\build\react.js"></script>
-<script src="..\build\react-dom.js"></script>
-<script src="..\build\browser.min.js"></script>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
 </head>
-<script >777777777</script>
-
+<body>
+<div id="div_hello"></div>
+ <script type="text/babel">
+ //注意DOM3个字母都为大写，大小写敏感。错误的话会找不到ReactDOM这个function
+	ReactDOM.render(
+		<h1>Hello world!</h1>,
+		document.getElementById('div_hello')
+	);
+</script>
+</body>
 </html>
