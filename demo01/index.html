@@ -7,12 +7,24 @@
 </head>
 <body>
 <div id="div_hello"></div>
- <script type="text/babel">
+<div id="div_hello2"></div>
+<script type="text/babel">
  //注意DOM3个字母都为大写，大小写敏感。错误的话会找不到ReactDOM这个function
+ //html语法和js语法的间隔是","逗号
 	ReactDOM.render(
 		<h1>Hello world!</h1>,
 		document.getElementById('div_hello')
 	);
 </script>
+<!--
+//js中可以有多个render同时存在
+<script type="text/babel">
+ //注意DOM3个字母都为大写，大小写敏感。错误的话会找不到ReactDOM这个function
+ //html语法和js语法的间隔是","逗号
+	ReactDOM.render(
+		<h1>Hello world2!</h1>,
+		document.getElementById('div_hello2')
+	);
+</script>-->
 </body>
 </html>
