@@ -9,7 +9,8 @@
 <body>
 <div id="input_name"></div>
 <script type="text/babel">
-	var names=[<h1>密码</h1>,<input type="text" defaultValue="password"/>];
+	var names=[<h1>密码</h1>,<input type="text" defaultValue="password"/>,
+	<select><option name="country" value="chinese">中国</option>,<option name="country" value="America">美国</option>,</select>];
 	ReactDOM.render(
 		<div>{names}</div>,
 		document.getElementById("input_name")
