@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="diy"></div>
+<script type="text/babel">
+	var New_List = React.createClass({
+		render : function(){
+			return(
+				<ol>
+					{
+						React.Children.map(this.props.children,function(child){
+							return <li>{child}</li>;
+						})
+					}
+				</ol>
+			
+			)
+		}
+	})
+	
+	ReactDOM.render(
+		<New_List>
+			<span>11111</span>
+			<span>222222222</span>
+		</New_List>
+		,document.getElementById("diy"))
+</script>
+</body>
+</html>
