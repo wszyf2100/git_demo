@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="diy"></div>
+<script type="text/babel">
+	var Check_props = React.createClass({
+		getDefaultProps : function(){
+			return{
+				title : 22222
+			}
+		},
+		propTypes :	{
+			title : React.PropTypes.number.isRequired,
+		},
+		
+		render : function(){
+			return <h1>{this.props.title}</h1>;
+		}
+	})
+	var a11 = 11111;
+	ReactDOM.render(
+		<Check_props  title = {a11}></Check_props>
+		,document.getElementById("diy")
+	)
+</script>
+</body>
+</html>
