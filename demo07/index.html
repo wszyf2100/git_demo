@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="diy"></div>
+<script type="text/babel">
+	var MyText = React.createClass({
+		handClick : function(){
+			this.refs.myTextInput.focus();
+			//this.refs.[refname]获取真实DOM
+		},
+		render : function(){
+			return(
+				<div>
+					<input type="text" ref="myTextInput" />
+					<input type="button" value="click focus text" onClick={this.handClick} />
+				</div>
+				
+			)
+		}
+	});
+	
+	ReactDOM.render(
+		<MyText />,
+		document.getElementById('diy')
+	)
+</script>
+</body>
+</html>
