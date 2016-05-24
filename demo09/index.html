@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="diy"></div>
+<!--在JXS中，最好不要写注释容易报错-->
+<!--input标签的/一定要写，否则报错-->
+<script type="text/babel">
+	var MyButton = React.createClass({
+		getInitialState : function(){
+			return {value : "Hello"};
+		},
+		handleChange : function(event){
+			this.setState( {value : event.target.value});
+		},
+		render : function(){
+			var value = this.state.value;
+			return(
+				<div>
+					<input type="text" value = {value} onChange = {this.handleChange}/>
+					<p>{value}</p>
+				</div>
+			
+			)
+		}
+	})
+	ReactDOM.render(<MyButton />,document.getElementById("diy"));
+</script>
+</body>
+</html>
