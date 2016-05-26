@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="diy"></div>
+<!--在JXS中，最好不要写注释容易报错-->
+<!--input标签的/一定要写，否则报错-->
+
+<script type="text/babel">
+//setInterval()里面一定要使用bind，只用setInterval会报错。
+//使用bind后，this代表的是本函数。不使用bind时，this代表window
+	var MyColor = React.createClass({
+		getInitialState : function(){
+			return {opacity : 1.0}
+		},
+		
+		componentWillMount : function (){
+			console.log("componentDidMount"+this);
+			this.timer = setInterval(function(){
+			
+			console.log("setInterval"+this);
+				var opacity = this.state.opacity;
+				opacity -= 0.05;
+				if(opacity < 0.1){
+					opacity = 1.0;
+				}
+				this.setState({opacity : opacity});
+			}.bind(this),100)
+		},
+		
+		render : function(){
+			return(
+				<div style={{opacity : this.state.opacity}}>
+					你好,{this.props.name}
+				</div>
+			)
+		}
+	})
+	
+	ReactDOM.render(<MyColor name="这段话会循环的显示隐藏"/>,document.getElementById("diy"));
+</script>
+</body>
+</html>
